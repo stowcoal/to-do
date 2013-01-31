@@ -13,4 +13,5 @@
 
 - (IBAction)done:(UIStoryboardSegue *)sender;
 - (IBAction)cancel:(UIStoryboardSegue *)sender;
+- (IBAction)buttonEditClick:(UIBarButtonItem *)sender;
 @end

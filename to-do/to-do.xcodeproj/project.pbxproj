@@ -20,6 +20,7 @@
 		DE63100E16BADBB800454B04 /* todoMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE63100D16BADBB800454B04 /* todoMasterViewController.m */; };
 		DE63101116BADBB800454B04 /* todoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE63101016BADBB800454B04 /* todoDetailViewController.m */; };
 		DEC0868516BAE22E00C3F290 /* todoAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC0868416BAE22E00C3F290 /* todoAddViewController.m */; };
+		DEC0868916BAF54000C3F290 /* todoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC0868816BAF53F00C3F290 /* todoTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		DE63101016BADBB800454B04 /* todoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todoDetailViewController.m; sourceTree = "<group>"; };
 		DEC0868316BAE22E00C3F290 /* todoAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todoAddViewController.h; sourceTree = "<group>"; };
 		DEC0868416BAE22E00C3F290 /* todoAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = todoAddViewController.m; sourceTree = "<group>"; };
+		DEC0868716BAF53F00C3F290 /* todoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todoTask.h; sourceTree = "<group>"; };
+		DEC0868816BAF53F00C3F290 /* todoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = todoTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				DE63100F16BADBB800454B04 /* todoDetailViewController.h */,
 				DE63101016BADBB800454B04 /* todoDetailViewController.m */,
 				DE630FF816BADBB800454B04 /* Supporting Files */,
+				DEC0868716BAF53F00C3F290 /* todoTask.h */,
+				DEC0868816BAF53F00C3F290 /* todoTask.m */,
 			);
 			path = "to-do";
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				DE63100E16BADBB800454B04 /* todoMasterViewController.m in Sources */,
 				DE63101116BADBB800454B04 /* todoDetailViewController.m in Sources */,
 				DEC0868516BAE22E00C3F290 /* todoAddViewController.m in Sources */,
+				DEC0868916BAF54000C3F290 /* todoTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

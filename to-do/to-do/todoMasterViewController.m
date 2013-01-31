@@ -120,16 +120,25 @@
             if (!_objects) {
                 _objects = [[NSMutableArray alloc] init];
             }
-            [_objects insertObject:addController.textFieldTask.text atIndex:0];
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [_objects insertObject:addController.textFieldTask.text atIndex:_objects.count];
+            //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            //[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [[self tableView] reloadData];
         }
         [self dismissViewControllerAnimated:YES completion:NULL];
     }
 }
-- (IBAction)cancel:(UIStoryboardSegue *)sender;
+- (IBAction)cancel:(UIStoryboardSegue *)segue;
 {
-
+    if([[segue identifier] isEqualToString:@"CancelAdd"]) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
+- (IBAction)buttonEditClick:(UIBarButtonItem *)sender {
+    if (self.tableView.editing)
+        [[self tableView] setEditing:NO animated:YES];
+    else
+        [[self tableView] setEditing:YES animated:YES];
+}
 @end
