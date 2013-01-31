@@ -19,6 +19,7 @@
 		DE63100B16BADBB800454B04 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE63100916BADBB800454B04 /* MainStoryboard.storyboard */; };
 		DE63100E16BADBB800454B04 /* todoMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE63100D16BADBB800454B04 /* todoMasterViewController.m */; };
 		DE63101116BADBB800454B04 /* todoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE63101016BADBB800454B04 /* todoDetailViewController.m */; };
+		DEC0868516BAE22E00C3F290 /* todoAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC0868416BAE22E00C3F290 /* todoAddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		DE63100D16BADBB800454B04 /* todoMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todoMasterViewController.m; sourceTree = "<group>"; };
 		DE63100F16BADBB800454B04 /* todoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = todoDetailViewController.h; sourceTree = "<group>"; };
 		DE63101016BADBB800454B04 /* todoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todoDetailViewController.m; sourceTree = "<group>"; };
+		DEC0868316BAE22E00C3F290 /* todoAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todoAddViewController.h; sourceTree = "<group>"; };
+		DEC0868416BAE22E00C3F290 /* todoAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = todoAddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 		DE630FF716BADBB800454B04 /* to-do */ = {
 			isa = PBXGroup;
 			children = (
+				DEC0868316BAE22E00C3F290 /* todoAddViewController.h */,
+				DEC0868416BAE22E00C3F290 /* todoAddViewController.m */,
 				DE63100016BADBB800454B04 /* todoAppDelegate.h */,
 				DE63100116BADBB800454B04 /* todoAppDelegate.m */,
 				DE63100916BADBB800454B04 /* MainStoryboard.storyboard */,
@@ -183,6 +188,7 @@
 				DE63100216BADBB800454B04 /* todoAppDelegate.m in Sources */,
 				DE63100E16BADBB800454B04 /* todoMasterViewController.m in Sources */,
 				DE63101116BADBB800454B04 /* todoDetailViewController.m in Sources */,
+				DEC0868516BAE22E00C3F290 /* todoAddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,7 @@
 				DE63101616BADBB800454B04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

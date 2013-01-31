@@ -7,8 +7,8 @@
 //
 
 #import "todoMasterViewController.h"
-
 #import "todoDetailViewController.h"
+#import "todoAddViewController.h"
 
 @interface todoMasterViewController () {
     NSMutableArray *_objects;
@@ -26,10 +26,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+ /*
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+  */
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,7 +39,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void)insertNewObject:(id)sender
 {
     if (!_objects) {
@@ -47,7 +49,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
+*/
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -108,6 +110,26 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
+}
+
+- (IBAction)done:(UIStoryboardSegue *)segue;
+{
+    if ([[segue identifier] isEqualToString:@"DoneAdd"]) {
+        todoAddViewController *addController = [segue sourceViewController];
+        if (addController.textFieldTask) {
+            if (!_objects) {
+                _objects = [[NSMutableArray alloc] init];
+            }
+            [_objects insertObject:addController.textFieldTask.text atIndex:0];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
+- (IBAction)cancel:(UIStoryboardSegue *)sender;
+{
+
 }
 
 @end

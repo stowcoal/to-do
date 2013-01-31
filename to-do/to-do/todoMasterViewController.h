@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface todoMasterViewController : UITableViewController
 
+- (IBAction)done:(UIStoryboardSegue *)sender;
+- (IBAction)cancel:(UIStoryboardSegue *)sender;
 @end
