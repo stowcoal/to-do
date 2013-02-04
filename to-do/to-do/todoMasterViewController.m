@@ -123,11 +123,11 @@
             }
             //addController.textFieldTask.textColor;
             
-            _taskName = [[NSMutableAttributedString alloc] initWithString:addController.textFieldTask.text];
+            
             /*
             [_taskName addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, _taskName.length)];
              */
-            [_objects insertObject:_taskName atIndex:_objects.count];
+            [_objects insertObject:[[NSMutableAttributedString alloc] initWithString:addController.textFieldTask.text] atIndex:_objects.count];
             //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
             //[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [[self tableView] reloadData];

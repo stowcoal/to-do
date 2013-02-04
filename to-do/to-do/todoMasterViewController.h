@@ -16,5 +16,5 @@
 - (IBAction)buttonEditClick:(UIBarButtonItem *)sender;
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath;
 
-@property (copy, nonatomic) NSMutableAttributedString *taskName;
+//@property (copy, nonatomic) NSMutableAttributedString *taskName;
 @end
