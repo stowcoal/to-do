@@ -159,16 +159,16 @@
 {
     if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
     {
-    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, _taskName.length)];
-    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleNone] range:NSMakeRange(0, _taskName.length)];
-    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+        [[_objects objectAtIndex:[indexPath row]] addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, [[_objects objectAtIndex:[indexPath row]] length])];
+        [[_objects objectAtIndex:[indexPath row]] addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleNone] range:NSMakeRange(0, [[_objects objectAtIndex:[indexPath row]] length])];
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
     }
     else
     {
-    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, _taskName.length)];
-    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, _taskName.length)];
+        [[_objects objectAtIndex:[indexPath row]] addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, [[_objects objectAtIndex:[indexPath row]] length])];
+        [[_objects objectAtIndex:[indexPath row]] addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, [[_objects objectAtIndex:[indexPath row]] length])];
 
-    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     }
     [[self tableView] reloadData];
     //[_objects setObject: atIndexedSubscript:[indexPath row]]
