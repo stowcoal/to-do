@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" editingAccessoryType="checkmark" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" editingAccessoryType="checkmark" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -74,8 +74,6 @@
         <!--Todo Add View Controller-->
         <scene sceneID="rJE-Ww-sQi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-s6-8vQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="knQ-Y7-tfi" userLabel="Exit" sceneMemberID="exit"/>
                 <tableViewController id="z3z-cF-VD5" customClass="todoAddViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wLR-18-9bb">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -98,7 +96,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="z3z-cF-VD5" id="ehh-SV-wnK"/>
+                                                        <outlet property="delegate" destination="z3z-cF-VD5" id="knw-Gv-OAj"/>
+                                                        <segue destination="knQ-Y7-tfi" kind="unwind" identifier="DoneKeyboard" unwindAction="done:" id="6wh-jt-TdS"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb9-Gg-uKp">
@@ -140,6 +139,8 @@
                         <outlet property="textFieldTask" destination="yM5-ZO-90R" id="h00-MB-BXu"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-s6-8vQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="knQ-Y7-tfi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="902" y="-649"/>
         </scene>
@@ -159,29 +160,6 @@
             <point key="canvasLocation" x="459" y="-649"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-        <class className="todoAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/todoAddViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonDone" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="textFieldTask" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="todoMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/todoMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonEditClick:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

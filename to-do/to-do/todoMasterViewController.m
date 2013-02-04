@@ -114,23 +114,37 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue;
 {
-    if ([[segue identifier] isEqualToString:@"DoneAdd"]) {
+    if ([[segue identifier] isEqualToString:@"DoneAdd"] ||
+        [[segue identifier] isEqualToString:@"DoneKeyboard"]) {
         todoAddViewController *addController = [segue sourceViewController];
-        if (addController.textFieldTask) {
+        if (![addController.textFieldTask.text isEqualToString:@""]) {
             if (!_objects) {
                 _objects = [[NSMutableArray alloc] init];
             }
-            [_objects insertObject:addController.textFieldTask.text atIndex:_objects.count];
+            //addController.textFieldTask.textColor;
+            
+            _taskName = [[NSMutableAttributedString alloc] initWithString:addController.textFieldTask.text];
+            /*
+            [_taskName addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, _taskName.length)];
+             */
+            [_objects insertObject:_taskName atIndex:_objects.count];
             //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
             //[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [[self tableView] reloadData];
+            //[[self tableView] indexPathForSelectedRow];
+            addController.textFieldTask.text = @"";
         }
         [self dismissViewControllerAnimated:YES completion:NULL];
     }
 }
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[cell textLabel] setAttributedText:[_objects objectAtIndex:[indexPath row]]];
+}
 - (IBAction)cancel:(UIStoryboardSegue *)segue;
 {
     if([[segue identifier] isEqualToString:@"CancelAdd"]) {
+        todoAddViewController *addController = [segue sourceViewController];
+        addController.textFieldTask.text = @"";
         [self dismissViewControllerAnimated:YES completion:NULL];
     }
 }
@@ -140,5 +154,23 @@
         [[self tableView] setEditing:NO animated:YES];
     else
         [[self tableView] setEditing:YES animated:YES];
+}
+- (void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *) indexPath
+{
+    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
+    {
+    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, _taskName.length)];
+    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleNone] range:NSMakeRange(0, _taskName.length)];
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    }
+    else
+    {
+    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, _taskName.length)];
+    [[_objects objectAtIndex:[indexPath row]] addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, _taskName.length)];
+
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    [[self tableView] reloadData];
+    //[_objects setObject: atIndexedSubscript:[indexPath row]]
 }
 @end

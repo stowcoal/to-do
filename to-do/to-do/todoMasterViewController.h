@@ -14,4 +14,7 @@
 - (IBAction)done:(UIStoryboardSegue *)sender;
 - (IBAction)cancel:(UIStoryboardSegue *)sender;
 - (IBAction)buttonEditClick:(UIBarButtonItem *)sender;
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath;
+
+@property (copy, nonatomic) NSMutableAttributedString *taskName;
 @end
