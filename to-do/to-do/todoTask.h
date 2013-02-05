@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface todoTask : NSObject
-@property (nonatomic, copy) NSAttributedString *taskName;
-
+@property (nonatomic, copy) NSString *taskName;
+@property (nonatomic) NSString *checked;
 @end
